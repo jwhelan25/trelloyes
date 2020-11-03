@@ -1,25 +1,28 @@
-import React from 'react'
+import React from 'react';
 import Card from './card'
-import './List.css'
+import './List.css';
 
-function List(props){
-    let header = props.header
-    let cards = props.cards
-
-    let mappedCards = cards.map((item)=> 
-    <Card key={item.id} title={item.title} content={item.content} />
-    )
-
-    return(
-        <section className="List">
-            <header className="List-header">
-            <h2>{header}</h2>
-            </header>
-            <div className="List-cards">
-                {mappedCards}
-            </div>
-        </section>
-    )
+export default function List(props) {
+  return (
+    <section className='List'>
+      <header className='List-header'>
+        <h2>{props.header}</h2>
+      </header>
+      <div className='List-cards'>
+        {props.cards.map((card) =>
+          <Card
+            key={card.id}
+            title={card.title}
+            content={card.content}
+          />
+        )}
+        <button
+          type='button'
+          className='List-add-button'
+        >
+          + Add Random Card
+        </button>
+      </div>
+    </section>
+  )
 }
-
-export default List

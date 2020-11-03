@@ -7,4 +7,4 @@ import STORE from './store'
 
 
 
-ReactDOM.render(<App STORE />, document.getElementById('root'));
+ReactDOM.render(<App store={STORE} />, document.getElementById('root'));
